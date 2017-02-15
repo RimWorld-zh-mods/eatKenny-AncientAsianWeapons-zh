@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<ThingDefs>
+
+  
+
+<ThingDef Name="BaseAsianMeleeWeapon" Abstract="True">
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <equipmentType>Primary</equipmentType>
+    <pathCost>10</pathCost>
+    <useHitPoints>True</useHitPoints>
+    <selectable>True</selectable>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+      <SellPriceFactor>0.5</SellPriceFactor>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <techLevel>Neolithic</techLevel>
+    <weaponTags>
+  <li>Neolithic</li>
+   <li>NeolithicMelee</li>  <li>Melee</li>
+  <li>Asian</li>  </weaponTags>
+    <thingCategories>
+      <li>WeaponsMelee</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>ArtName_WeaponMelee</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+    </recipeMaker>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+  </ThingDef>
+
+
+
+  <ThingDef Name="BaseAsianMeleeWeapon_Sharp" ParentName="BaseAsianMeleeWeapon" Abstract="True">
+    <recipeMaker>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Root</li>
+      </categories>
+      <exceptedThingDefs>
+        <li>Silver</li>
+        <li>Gold</li>
+        <li>WoodLog</li>
+      </exceptedThingDefs>
+    </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef Name="BaseAsianMeleeWeapon_Blunt" ParentName="BaseAsianMeleeWeapon" Abstract="True">
+    <recipeMaker>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <exceptedThingDefs>
+          <li>Silver</li>
+          <li>Gold</li>
+        </exceptedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+  
+
+  
+  
+  
+  
+  
+  
+<!-- ============================================================== -->
+
+  
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Katana</defName>
+    <label>katana</label>
+    <description>katana were one of the traditionally made Japanese swords that were used by the samurai of feudal Japan.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Katana</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>100</costStuffCount>
+    <statBases>
+      <WorkToMake>90000</WorkToMake>
+ <Mass>1.2</Mass>     <MeleeWeapon_DamageAmount>16</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.25</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-20</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Jian</defName>
+    <label>jian</label>
+    <description>The jian is a double-edged straight sword used during the last 2,500 years in China.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Jian</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>90</costStuffCount>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+  <Mass>1</Mass>    <MeleeWeapon_DamageAmount>13</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.10</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Blunt">
+    <defName>MeleeWeapon_MonkSpade</defName>
+    <label>monk's spade</label>
+    <description>A monk's spade, also called a Shaolin Spade, is a Chinese pole weapon consisting of a long pole with a flat spade-like blade on one end and a smaller crescent shaped blade on the other. Neither blade was designed to be sharpened.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/MonkSpade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>120</costStuffCount>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+ <Mass>4</Mass>     <MeleeWeapon_DamageAmount>17</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.95</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-20</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Blunt</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Blunt">
+    <defName>MeleeWeapon_Kanabo</defName>
+    <label>kanabo</label>
+    <description>The kanabo was a spiked or knobbed club or truncheon used in feudal Japan as a weapon by samurai and their retainers.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Kanabo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>90</costStuffCount>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+  <Mass>3.5</Mass>    <MeleeWeapon_DamageAmount>14</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.75</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-20</equippedAngleOffset>
+    <stuffCategories>
+      <li>Woody</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Blunt</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Ninjato</defName>
+    <label>ninjato</label>
+    <description>The ninjato are allegedly the preferred weapon that the Shinobi of feudal Japan carried.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Ninjato</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>75</costStuffCount>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+  <Mass>0.8</Mass>    <MeleeWeapon_DamageAmount>12</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>1.82</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-45</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_FengHuoLun</defName>
+    <label>Feng-Huo-Lun</label>
+    <description>Feng-huo-lun, or Wind-and-fire wheels, are melee weapons, wielded as a pair, associated with Chinese martial arts such as baguazhang and taijiquan. Visually, they are similar to chakrams.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/FengHuoLun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>60</costStuffCount>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+  <Mass>0.4</Mass>    <MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>1.58</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-45</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Dao</defName>
+    <label>dao</label>
+    <description>Dao are single-edged Chinese swords, primarily used for slashing and chopping.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Dao</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>100</costStuffCount>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+  <Mass>1.4</Mass>    <MeleeWeapon_DamageAmount>14</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.25</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Yari</defName>
+    <label>yari</label>
+    <description>Yari is the term for one of the traditionally made Japanese blades in the form of a spear.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Yari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>100</costStuffCount>
+    <statBases>
+      <WorkToMake>35000</WorkToMake>
+ <Mass>3.5</Mass>     <MeleeWeapon_DamageAmount>18</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.75</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>35</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Stab</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Kabutowari</defName>
+    <label>kabutowari</label>
+    <description>The Kabutowari also known as hachiwari, was a type of knife-shaped weapon, resembling a jitte in many respects. This weapon was carried as a side-arm by the samurai class of feudal Japan.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Kabutowari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>40</costStuffCount>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+  <Mass>0.55</Mass>    <MeleeWeapon_DamageAmount>10</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>1.70</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>-5</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseAsianMeleeWeapon_Sharp">
+    <defName>MeleeWeapon_Naginata</defName>
+    <label>naginata</label>
+    <description>The naginata is one of several varieties of traditionally made Japanese blades in the form of a pole weapon. Naginata were originally used by the samurai class of feudal Japan, as well as by ashigaru (foot soldiers) and sohei (warrior monks).</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Naginata</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <costStuffCount>120</costStuffCount>
+    <statBases>
+      <WorkToMake>25000</WorkToMake>
+ <Mass>2</Mass>     <MeleeWeapon_DamageAmount>21</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>3.85</MeleeWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>5</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+
+    </stuffCategories>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <meleeDamageDef>Cut</meleeDamageDef>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</ThingDefs>
